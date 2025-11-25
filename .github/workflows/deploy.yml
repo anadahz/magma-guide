@@ -1,9 +1,9 @@
-name: Deploy website to GitHub Pages
+name: Deploy VitePress to GitHub Pages
 
 on:
   push:
-    branches: [master]
-  workflow_dispatch:
+    branches:
+      - master
 
 permissions:
   contents: read
@@ -11,19 +11,17 @@ permissions:
   id-token: write
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-24.04
-    concurrency:
-      group: 'deploy-pages'
-      cancel-in-progress: true
     steps:
       - uses: actions/checkout@v3
       - name: Install dependencies
         run: npm install
-      - name: Build the site
+      - name: Build site
         run: npm run docs:build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: docs/.vitepress/dist
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
-        with:
-          branch: gh-pages
-          folder: docs/.vitepress/dist

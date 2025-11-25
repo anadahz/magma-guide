@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'magma',
   description: 'This is the magma guide',
-  base: '/magma-guide/', // Adjust this to your GitHub repo name
+  base: '/magma-guide/',
   outDir: 'public',
   head: [
     ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/icons/apple-touch-icon.png' }],
@@ -18,6 +18,7 @@ export default defineConfig({
     ['meta', { name: 'msapplication-TileImage', content: '/icons/mstile-144x144.png' }],
     ['meta', { name: 'theme-color', content: '#ffffff' }]
   ],
+
   themeConfig: {
     repo: 'lavafeld/magma-guide',
     editLinks: true,
@@ -26,7 +27,7 @@ export default defineConfig({
     smoothScroll: true,
     lastUpdated: 'Last Updated',
     sidebar: {
-      '/guide/': getGuideSidebar('Guide', 'Advanced', 'Contribute')
+      '/guide/': getGuideSidebar('Guide', 'Advanced', 'Contribute'),
     },
     nav: [
       { text: 'Home', link: '/' },
@@ -74,3 +75,4 @@ function getGuideSidebar(groupA, groupB, groupC) {
     }
   ]
 }
+

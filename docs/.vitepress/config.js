@@ -21,8 +21,10 @@ export default defineConfig({
 
   themeConfig: {
     repo: 'lavafeld/magma-guide',
-    editLinks: true,
-    editLinkText: 'Help us improve this page!',
+    editLink: {
+      pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',
+      text: 'Help us improve this page!'
+    },
     docsDir: 'docs',
     smoothScroll: true,
     lastUpdated: 'Last Updated',

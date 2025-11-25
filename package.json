@@ -10,7 +10,7 @@
   "homepage": "https://magma.lavafeld.org/",
   "bugs": "https://github.com/lavafeld/magma-guide/issues/",
   "repository": {
-    "type": "git",
+    "type": "module",
     "url": "https://github.com/lavafeld/magma-guide"
   },
   "dependencies": {

@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'magma',
   description: 'This is the magma guide',
-  base: '/magma-guide/',  // Adjust this to match your GitHub repo name
+  base: '/magma-guide/', // Adjust this to your GitHub repo name
   outDir: 'public',
   head: [
     ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/icons/apple-touch-icon.png' }],
@@ -21,9 +21,9 @@ export default defineConfig({
   themeConfig: {
     repo: 'lavafeld/magma-guide',
     editLinks: true,
+    editLinkText: 'Help us improve this page!',
     docsDir: 'docs',
     smoothScroll: true,
-    editLinkText: 'Help us improve this page!',
     lastUpdated: 'Last Updated',
     sidebar: {
       '/guide/': getGuideSidebar('Guide', 'Advanced', 'Contribute')
@@ -61,8 +61,6 @@ function getGuideSidebar(groupA, groupB, groupC) {
       collapsed: false,
       items: [
         { text: 'Advanced Intro', link: '/guide/advanced-intro' },
-        // { text: 'Analyze DNS', link: '/guide/analyze-dns' }, // uncomment if needed
-        // { text: 'Analyze Google Traffic Data', link: '/guide/analyze-google-traffic-data' }, // uncomment if needed
         { text: 'Data Sources', link: '/guide/data-sources' },
         { text: 'OSINT Sources', link: '/guide/osint-sources' }
       ]

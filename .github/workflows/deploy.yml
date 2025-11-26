@@ -23,7 +23,7 @@ jobs:
         id: upload-pages
         uses: actions/upload-pages-artifact@v4
         with:
-          path: docs/public
+          path: docs
           name: github-pages-artifact
   
   deploy:

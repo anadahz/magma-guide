@@ -23,7 +23,7 @@ jobs:
         id: upload-pages
         uses: actions/upload-pages-artifact@v4
         with:
-          path: /
+          path: docs/.vitepress/dist
           name: github-pages-artifact
   
   deploy:

@@ -1,38 +1,15 @@
 {
   "name": "magma-guide",
-  "description": "The magma guide",
-  "version": "1.0.0",
-  "type": "module",
-  "author": {
-    "name": "Vasilis Ververis",
-    "email": "magma@lavafeld.org"
-  },
-  "license": "CC-BY-SA-4.0",
-  "homepage": "https://magma.lavafeld.org/",
-  "bugs": "https://github.com/lavafeld/magma-guide/issues/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/lavafeld/magma-guide"
-  },
-  "dependencies": {
-    "vue": "3.3.4"
+  "version": "0.0.1",
+  "description": "A guide for Magma",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "deploy": "npm run build && cp docs/.vuepress/dist/index.html docs/.vuepress/dist/404.html && gh-pages -d docs/.vuepress/dist"
   },
   "devDependencies": {
-    "vitepress": "1.6.4"
-  },
-  "overrides": {
-  "esbuild": "0.25.0"
-  },
-  "scripts": {
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
-  },
-  "keywords": [
-    "documentation",
-    "guide"
-  ],
-  "engines": {
-    "node": ">=14"
+    "gh-pages": "^3.2.3",
+    "vuepress": "^1.8.2"
   }
 }

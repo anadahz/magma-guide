@@ -19,6 +19,16 @@ jobs:
         run: npm install
       - name: Build site
         run: npm run docs:build
+      - name: Debug
+        run: |
+          echo "=== dist root ==="
+          ls -la docs/dist/
+          echo "=== icons ==="
+          ls -la docs/dist/icons/ || echo "NO ICONS"
+          echo "=== logo ==="
+          ls docs/dist/magma-logo.svg || echo "NO LOGO"
+          echo "=== publicDir in config ==="
+          cat docs/.vitepress/config.js | grep publicDir
       - name: Upload artifact
         id: upload-pages
         uses: actions/upload-pages-artifact@v4

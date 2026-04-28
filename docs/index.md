@@ -5,7 +5,6 @@ hero:
   name: "Welcome to the magma guide!"
   text: "Your first stop when conducting research on information controls, Internet censorship, and online surveillance."
   image:
-    src: /magma-logo.svg
     src: ./guide/assets/img/magma-logo.svg
     alt: Magma
   actions:

@@ -1,38 +1,28 @@
-name: Deploy website to GitHub Pages
+name: Deploy to GitHub Pages
+
 on:
   push:
     branches:
       - master
-permissions:
-  contents: read
-  pages: write
-  id-token: write
 
 jobs:
-  build:
-    runs-on: ubuntu-24.04
-    outputs:
-      artifact-name: github-pages-artifact
+  deploy:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
       - name: Install dependencies
         run: npm install
-      - name: Build site
-        run: npm run docs:build
-      - name: Upload artifact
-        id: upload-pages
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: docs/public
-          name: github-pages-artifact
-  
-  deploy:
-    runs-on: ubuntu-24.04
-    needs: build
-    steps:
+      
+      - name: Build VitePress
+        run: npm run build
+      
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          artifact_name: ${{ needs.build.outputs.artifact-name }}
-
+          publish_dir: ./docs/public

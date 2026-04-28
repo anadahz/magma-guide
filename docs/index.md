@@ -1,12 +1,12 @@
 ---
 home: true
-heroImage: /magma-logo.svg
+heroImage: ../magma-logo.svg
 heroText: Welcome to the magma guide!
 tagline:
   Your first stop when conducting research on information controls, Internet
   censorship, and online surveillance.
 actionText: Get Started →
-actionLink: /guide/
+actionLink: /magma-guide/guide/
 features:
   - title: Better Research
     details:

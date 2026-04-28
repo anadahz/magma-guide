@@ -4,7 +4,7 @@ export default defineConfig({
   title: 'magma',
   description: 'This is the magma guide',
   base: '/magma-guide/',
-  outDir: 'public',
+  outDir: '../dist',                      
   publicDir: '.vitepress/public',
   head: [
     ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/icons/apple-touch-icon.png' }],

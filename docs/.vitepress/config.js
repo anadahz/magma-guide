@@ -1,15 +1,10 @@
 import { defineConfig } from 'vitepress'
-import { fileURLToPath } from 'url'
-import path from 'path'
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
   title: 'magma',
   description: 'This is the magma guide',
   base: '/magma-guide/',
-  outDir: path.resolve(__dirname, '../dist'),
-  publicDir: path.resolve(__dirname, 'public'), 
+  outDir: 'public',
   head: [
     ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/icons/apple-touch-icon.png' }],
     ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/icons/favicon-16x16.png' }],
